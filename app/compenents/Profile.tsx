@@ -24,28 +24,28 @@ const HeroSection = () => {
       repeat={Infinity}
     />
           </h1>
-          <p className="text-[#ADB7BE] text-lg lg:text-xl px-2.5">
+          <p className="text-secondary-500 text-lg lg:text-xl px-2.5">
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsa
             pariatur reprehenderit doloribus sed quisquam voluptate omnis
             expedita. Ut voluptates iusto voluptate? Perferendis ab modi quos
             eius quae esse iure atque!
           </p>
-          <div className="mt-5  flex justify-center lg:justify-start lg:mt-14 lg:px-11">
-            <button className="py-2 px-6 border-2 rounded-full bg-white hover:bg-slate-200 text-black  mr-3.5">
+          <div className="mt-5 flex justify-center lg:justify-start lg:mt-14 lg:px-11">
+            <button className="py-2 px-6 border-2 border-primary-500 rounded-full bg-primary-500 hover:bg-primary-600 text-white mr-3.5 transition-colors">
               Hire me
             </button>
-            <button className="py-2 px-6 border-2 rounded-full bg-transparent hover:bg-slate-800 text-white ">
+            <button className="py-2 px-6 border-2 border-primary-500 rounded-full bg-transparent hover:bg-secondary-900 text-white transition-colors">
               Download CV
             </button>
           </div>
         </div>
-        <div className="col-span-5 flex justify-center lg:justify-end mt-6 lg:mt-0  lg:mr-10">
-          <div className="rounded-full   w-[300px] h-[300px] overflow-hidden ">
+        <div className="col-span-5 flex justify-center lg:justify-end mt-6 lg:mt-0 lg:mr-10">
+          <div className="rounded-full w-[300px] h-[300px] overflow-hidden">
             <Image
               src="/Images/profile.png"
               width={300}
               height={300}
-              className="object-cover  rounded-full"
+              className="object-cover rounded-full"
               alt="Profile"
             />
           </div>

@@ -18,13 +18,13 @@ const AboutSection = () => {
       <div className="md:grid grid-cols-2 gap-4 py-7">
         <div className="flex flex-col justify-center items-center ">
           <h1 className="text-4xl font-extrabold mb-2 ml-4 ">About Me</h1>
-          <p className="px-3 text-base sm:text-lg">
+          <p className="px-3 text-base sm:text-lg text-secondary-500">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat
             hic perspiciatis ullam deleniti temporibus architecto, vel provident
             quos in natus pariatur magnam eius veniam dignissimos at eaque
             facilis ad. Totam.
           </p>
-          <div className="flex justify-between text-[#ADB7BE] mt-5  lg:mt-6 ">
+          <div className="flex justify-between text-secondary-500 mt-5 lg:mt-6">
             {TAB_DATA.map((t) => {
               return (
                 <TabButton
@@ -41,7 +41,7 @@ const AboutSection = () => {
             {TAB_DATA.find((t) => tab == t.id)?.content}
           </div>
         </div>
-        <div className="lg:mt-3.5 text-center mt-5 ">
+        <div className="lg:mt-3.5 text-center mt-5">
           <Image
             alt="my school"
             src={"/Images/profile.png"}

@@ -18,7 +18,7 @@ export default function Navbar() {
       {/* -------- TOP BAR -------- */}
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
         {/* Logo */}
-        <Link href="/" className="text-3xl font-extrabold text-white">
+        <Link href="/" className="text-3xl font-extrabold text-primary-500">
           Logo
         </Link>
 
@@ -28,7 +28,7 @@ export default function Navbar() {
             <li key={item.id}>
               <Link
                 href={item.href}
-                className="hover:text-amber-400 transition"
+                className="hover:text-primary-500 transition"
               >
                 {item.title}
               </Link>
@@ -63,7 +63,7 @@ export default function Navbar() {
               <Link
                 href={item.href}
                 onClick={() => setIsOpen(false)}
-                className="block w-full py-2 hover:text-amber-400 transition"
+                className="block w-full py-2 hover:text-primary-500 transition"
               >
                 {item.title}
               </Link>

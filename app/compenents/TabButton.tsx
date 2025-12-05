@@ -2,8 +2,8 @@ import React from 'react'
 
 const TabButton = ({ selectTab, active, children }) => {
   const styleTab = active 
-    ? "border-b-2 border-amber-400 text-white" 
-    : "text-[#ABD7BE]"
+    ? "border-b-2 border-primary-500 text-white" 
+    : "text-secondary-500"
 
   return (
     <span  
