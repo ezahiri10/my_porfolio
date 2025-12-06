@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Navbar from "./compenents/Navbar";
 import Footer from "./compenents/Footer";
+import VantaBackground from "./compenents/VantaBackground";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -65,9 +66,11 @@ export default function RootLayout({
         />
       </head>
       <body className="bg-black text-white">
-        <Navbar />
-        <main className="max-w-7xl mx-auto">{children}</main>
-        <Footer />
+        <VantaBackground>
+          <Navbar />
+          <main className="max-w-7xl mx-auto">{children}</main>
+          <Footer />
+        </VantaBackground>
       </body>
     </html>
   );
