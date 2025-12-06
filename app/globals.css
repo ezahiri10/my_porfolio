@@ -53,6 +53,12 @@ body {
   animation-delay: 4s;
 }
 
+/* Ensure content sits above animated starfield */
+body {
+  position: relative;
+  overflow-x: hidden;
+}
+
 main {
   position: relative;
   z-index: 10;
@@ -60,5 +66,14 @@ main {
 
 /* Prevent canvas from blocking interactions */
 canvas {
-  pointer-events: none;
+  pointer-events: none !important;
+}
+
+/* Make canvas responsive */
+@media (max-width: 768px) {
+  canvas {
+    display: block;
+    width: 100% !important;
+    height: 100% !important;
+  }
 }
