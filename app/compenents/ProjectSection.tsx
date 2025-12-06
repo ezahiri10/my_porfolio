@@ -51,11 +51,8 @@ const ProjectSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-5xl md:text-6xl font-black text-white mb-4">
-            Featured{" "}
-            <span className="bg-gradient-to-r from-primary-400 to-primary-600 bg-clip-text text-transparent">
-              Projects
-            </span>
+          <h2 className="text-5xl md:text-6xl font-black mb-4 text-white">
+            Featured <span className="text-primary-500">Projects</span>
           </h2>
           <p className="text-secondary-400 text-lg">
             Showcasing my best work and technical expertise

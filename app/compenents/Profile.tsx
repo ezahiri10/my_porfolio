@@ -94,6 +94,9 @@ const HeroSection = () => {
               View My Work
             </motion.button>
             <motion.button
+              onClick={() => {
+                window.open('https://drive.google.com/uc?export=download&id=1r0MXPS8Gkh-EzrP6jnEf0qbWvRlOzzOU', '_blank');
+              }}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="px-8 py-4 border-2 border-primary-500 text-primary-400 hover:bg-primary-500/10 font-bold rounded-xl transition-all duration-300 backdrop-blur-sm"
@@ -130,7 +133,7 @@ const HeroSection = () => {
             {/* Profile image */}
             <div className="absolute inset-2 rounded-full overflow-hidden border-4 border-secondary-900 bg-secondary-900">
               <Image
-                src="/Images/profile.png"
+                src="/Images/profile.jpg"
                 width={400}
                 height={400}
                 className="object-cover w-full h-full hover:scale-110 transition-transform duration-500"

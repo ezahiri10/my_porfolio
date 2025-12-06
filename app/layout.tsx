@@ -28,7 +28,7 @@ export const metadata: Metadata = {
       "Full stack developer specializing in React, Next.js, and Node.js.",
     images: [
       {
-        url: "/Images/profile.png",
+        url: "/Images/profile.jpg",
         width: 1200,
         height: 630,
         alt: "Mostapha Zahiri",
@@ -56,7 +56,7 @@ export default function RootLayout({
               name: "Mostapha Zahiri",
               url: "https://mostapha-zahiri.com",
               jobTitle: "Full Stack Developer",
-              image: "/Images/profile.png",
+              image: "/Images/profile.jpg",
               sameAs: [
                 "https://github.com/ezahiri10",
                 "https://www.linkedin.com/in/el-mustapha-zahiri-a33760368/",
