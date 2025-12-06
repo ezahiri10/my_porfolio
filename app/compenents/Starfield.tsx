@@ -4,6 +4,28 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import { useRef, useMemo } from "react";
 import * as THREE from "three";
 
+// Generate a circular texture dynamically using canvas
+function createCircleTexture() {
+  const canvas = document.createElement("canvas");
+  canvas.width = 64;
+  canvas.height = 64;
+
+  const ctx = canvas.getContext("2d");
+  if (!ctx) return new THREE.CanvasTexture(canvas);
+
+  // Draw a soft circular gradient
+  const gradient = ctx.createRadialGradient(32, 32, 0, 32, 32, 32);
+  gradient.addColorStop(0, "rgba(255, 255, 255, 1)");
+  gradient.addColorStop(0.5, "rgba(255, 255, 255, 0.8)");
+  gradient.addColorStop(1, "rgba(255, 255, 255, 0)");
+
+  ctx.fillStyle = gradient;
+  ctx.fillRect(0, 0, 64, 64);
+
+  const texture = new THREE.CanvasTexture(canvas);
+  return texture;
+}
+
 function StarfieldContent() {
   const pointsRef = useRef<THREE.Points>(null);
   const particlesRef = useRef<{
@@ -12,7 +34,7 @@ function StarfieldContent() {
   } | null>(null);
 
   // Generate star geometry and animation data
-  const { geometry, positions, velocities } = useMemo(() => {
+  const { geometry, positions, velocities, circleTexture } = useMemo(() => {
     const starCount = 1500; // Adjust for density: higher = more stars
     const posArray = new Float32Array(starCount * 3);
     const velArray = new Float32Array(starCount * 3);
@@ -36,6 +58,7 @@ function StarfieldContent() {
       geometry: geom,
       positions: posArray,
       velocities: velArray,
+      circleTexture: createCircleTexture(),
     };
   }, []);
 
@@ -80,11 +103,13 @@ function StarfieldContent() {
   return (
     <points ref={pointsRef} geometry={geometry}>
       <pointsMaterial
-        size={0.3} // Adjust star size: lower = smaller
+        size={0.5} // Adjust star size: lower = smaller
+        map={circleTexture} // Use circular sprite texture
         color={0xaabbff} // Soft blue-white
         sizeAttenuation={true}
         transparent={true}
-        opacity={0.8}
+        alphaTest={0.5} // Preserve circular shape by cutting alpha
+        opacity={0.9}
         fog={false}
       />
     </points>
