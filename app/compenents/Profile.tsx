@@ -36,7 +36,10 @@ const HeroSection = () => {
 
   return (
     <section className="min-h-screen flex items-center justify-center px-4 py-20 relative overflow-hidden">
-      {/* ...existing code... */}
+      {/* Animated background elements */}
+      <div className="absolute top-20 left-10 w-72 h-72 bg-primary-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
+      <div className="absolute top-40 right-10 w-72 h-72 bg-secondary-700 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
+      <div className="absolute -bottom-8 left-1/2 w-72 h-72 bg-primary-600 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
 
       <motion.div
         className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-6xl"
@@ -105,8 +108,56 @@ const HeroSection = () => {
         </motion.div>
 
         {/* RIGHT SIDE - IMAGE */}
-        <motion.div className="relative flex justify-center items-center" variants={imageVariants}>
-          {/* ...existing image code... */}
+        <motion.div 
+          className="relative flex justify-center items-center"
+          variants={imageVariants}
+        >
+          <div className="relative w-80 h-80 md:w-96 md:h-96">
+            {/* Animated glow circle */}
+            <motion.div 
+              className="absolute inset-0 bg-gradient-to-br from-primary-500 via-primary-600 to-secondary-700 rounded-full blur-2xl opacity-75"
+              animate={{ scale: [1, 1.1, 1] }}
+              transition={{ repeat: Infinity, duration: 3 }}
+            ></motion.div>
+            
+            {/* Rotating border circle */}
+            <motion.div 
+              className="absolute inset-0 rounded-full border-4 border-transparent bg-gradient-to-r from-primary-400 to-primary-600 bg-clip-border"
+              animate={{ rotate: 360 }}
+              transition={{ repeat: Infinity, duration: 8, ease: "linear" }}
+            ></motion.div>
+
+            {/* Profile image */}
+            <div className="absolute inset-2 rounded-full overflow-hidden border-4 border-secondary-900 bg-secondary-900">
+              <Image
+                src="/Images/profile.png"
+                width={400}
+                height={400}
+                className="object-cover w-full h-full hover:scale-110 transition-transform duration-500"
+                alt="Mostapha Zahiri"
+              />
+            </div>
+
+            {/* Floating particles animation */}
+            <motion.div 
+              className="absolute top-0 left-0 w-3 h-3 bg-primary-400 rounded-full"
+              animate={{ 
+                x: [0, 10, 0],
+                y: [0, -15, 0],
+                opacity: [0.3, 1, 0.3]
+              }}
+              transition={{ repeat: Infinity, duration: 4 }}
+            ></motion.div>
+            <motion.div 
+              className="absolute bottom-20 right-10 w-2 h-2 bg-primary-500 rounded-full"
+              animate={{ 
+                x: [0, -12, 0],
+                y: [0, 10, 0],
+                opacity: [0.3, 1, 0.3]
+              }}
+              transition={{ repeat: Infinity, duration: 5, delay: 0.5 }}
+            ></motion.div>
+          </div>
         </motion.div>
       </motion.div>
 
