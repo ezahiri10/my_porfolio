@@ -3,14 +3,15 @@
 import { useState } from "react";
 import Link from "next/link";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
+import { motion } from "framer-motion";
 
 const navItems = [
-  { id: 1, title: "About", href: "/about" },
-  { id: 2, title: "Projects", href: "/projects" },
-  { id: 3, title: "Contact", href: "/contact" },
+  { id: 1, title: "About", href: "#about" },
+  { id: 2, title: "Projects", href: "#projects" },
+  { id: 3, title: "Contact", href: "#contact" },
 ];
 
-export default function Navbar() {
+function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -19,38 +20,39 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
         {/* Logo */}
         <Link href="/" className="text-3xl font-extrabold text-primary-500">
-          Logo
+          Mostapha
         </Link>
 
         {/* Desktop Nav */}
         <ul className="hidden md:flex gap-10 text-white text-lg">
           {navItems.map((item) => (
-            <li key={item.id}>
+            <motion.li key={item.id} whileHover={{ scale: 1.1 }}>
               <Link
                 href={item.href}
                 className="hover:text-primary-500 transition"
               >
                 {item.title}
               </Link>
-            </li>
+            </motion.li>
           ))}
         </ul>
 
         {/* Mobile Toggle Button */}
-        <button
+        <motion.button
           onClick={() => setIsOpen(!isOpen)}
           className="md:hidden text-white"
+          whileTap={{ scale: 0.95 }}
         >
           {isOpen ? (
             <XMarkIcon className="h-9 w-9" />
           ) : (
             <Bars3Icon className="h-9 w-9" />
           )}
-        </button>
+        </motion.button>
       </div>
 
       {/* -------- MOBILE MENU -------- */}
-      <div
+      <motion.div
         className={`
           md:hidden bg-black/90 backdrop-blur-sm text-white overflow-hidden
           transition-all duration-300 ease-in-out
@@ -59,7 +61,7 @@ export default function Navbar() {
       >
         <ul className="flex flex-col py-4 px-6 space-y-4 text-lg">
           {navItems.map((item) => (
-            <li key={item.id}>
+            <motion.li key={item.id} whileHover={{ x: 10 }}>
               <Link
                 href={item.href}
                 onClick={() => setIsOpen(false)}
@@ -67,10 +69,12 @@ export default function Navbar() {
               >
                 {item.title}
               </Link>
-            </li>
+            </motion.li>
           ))}
         </ul>
-      </div>
+      </motion.div>
     </nav>
   );
 }
+
+export default Navbar;

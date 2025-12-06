@@ -1,39 +1,55 @@
 import { EyeIcon, CodeBracketIcon } from "@heroicons/react/24/solid";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 const ProjectCard = ({ imgUrl, title, description, githubUrl, preview }) => {
   return (
-    <div>
+    <motion.div
+      whileHover={{ y: -10 }}
+      transition={{ duration: 0.3 }}
+      className="h-full"
+    >
       <div
-        className="bg-cover bg-center h-52 lg:h-72 rounded-xl shadow-xl group relative"
+        className="bg-cover bg-center h-52 lg:h-72 rounded-xl shadow-xl group relative overflow-hidden"
         style={{ backgroundImage: `url(${imgUrl})` }}
       >
-        <div
-          className="absolute inset-0 rounded-xl bg-black/60 opacity-0 transition-all duration-300 group-hover:opacity-100 flex justify-center items-center gap-5"
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileHover={{ opacity: 1 }}
+          transition={{ duration: 0.3 }}
+          className="absolute inset-0 rounded-xl bg-black/60 flex justify-center items-center gap-5"
         >
-          {preview === '#' ? null : 
-          (
+          {preview !== '#' && (
+            <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.9 }}>
+              <Link
+                href={preview}
+                className="border-2 rounded-full border-primary-500 hover:border-white p-3 transition-colors"
+              >
+                <EyeIcon className="h-6 w-6 text-primary-500 hover:text-white" />
+              </Link>
+            </motion.div>
+          )}
+          <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.9 }}>
             <Link
-              href={preview}
-              className="border-2 hover:white rounded-full border-secondary-500 hover:border-white"
+              href={githubUrl}
+              className="border-2 rounded-full border-primary-500 hover:border-white p-3 transition-colors"
             >
-              <EyeIcon className="h-10 text-secondary-500 hover:text-white" />
-            </Link>) 
-          }
-          <Link
-            href={githubUrl}
-            className="border-2 hover:text-white rounded-full border-secondary-500 hover:border-white"
-          >
-            <CodeBracketIcon className="h-10 text-secondary-500 hover:text-white" />
-          </Link>
-        </div>
+              <CodeBracketIcon className="h-6 w-6 text-primary-500 hover:text-white" />
+            </Link>
+          </motion.div>
+        </motion.div>
       </div>
 
-      <div className="text-white mt-2 rounded-t-2xl text-center mb-5">
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ delay: 0.2 }}
+        className="text-white mt-4 text-center"
+      >
         <h5 className="font-semibold text-xl">{title}</h5>
         <p className="text-sm text-secondary-500">{description}</p>
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 };
 
