@@ -1,4 +1,4 @@
-import { EyeIcon, CodeBracketIcon } from "@heroicons/react/24/solid";
+import { CodeBracketIcon } from "@heroicons/react/24/solid";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
@@ -19,20 +19,12 @@ const ProjectCard = ({ imgUrl, title, description, githubUrl, preview }) => {
           transition={{ duration: 0.3 }}
           className="absolute inset-0 rounded-xl bg-black/60 flex justify-center items-center gap-5"
         >
-          {preview !== '#' && (
-            <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.9 }}>
-              <Link
-                href={preview}
-                className="border-2 rounded-full border-primary-500 hover:border-white p-3 transition-colors"
-              >
-                <EyeIcon className="h-6 w-6 text-primary-500 hover:text-white" />
-              </Link>
-            </motion.div>
-          )}
           <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.9 }}>
             <Link
               href={githubUrl}
-              className="border-2 rounded-full border-primary-500 hover:border-white p-3 transition-colors"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="border-2 rounded-full border-primary-500 hover:border-white p-3 transition-colors flex items-center justify-center"
             >
               <CodeBracketIcon className="h-6 w-6 text-primary-500 hover:text-white" />
             </Link>

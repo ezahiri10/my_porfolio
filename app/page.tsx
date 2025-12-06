@@ -1,8 +1,8 @@
 import Profile from "./compenents/Profile";
 import AboutSection from "./compenents/AboutSection";
 import ProjectSection from "./compenents/ProjectSection";
-import EmailSection from "./compenents/EmailSection";
-
+import EmailTemplate from "./compenents/EmailTemplate";
+import Cube3D from "./compenents/Cub3d";
 export default function Home() {
   return (
     <>
@@ -14,7 +14,8 @@ export default function Home() {
         <ProjectSection />
       </section>
       <section id="contact">
-        <EmailSection />
+        <EmailTemplate />
+        <Cube3D />
       </section>
     </>
   );

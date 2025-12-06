@@ -77,19 +77,13 @@ const AboutSection = () => {
               variants={itemVariants}
             >
               {TAB_DATA.map((t) => (
-                <motion.button
+                <TabButton
                   key={t.id}
-                  onClick={() => handleTabChange(t.id)}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className={`px-6 py-2 rounded-lg font-semibold transition-all duration-300 ${
-                    tab === t.id
-                      ? "bg-primary-500 text-white shadow-lg shadow-primary-500/50"
-                      : "bg-secondary-800/50 text-secondary-400 hover:bg-secondary-700/50 border border-secondary-700"
-                  }`}
+                  active={tab === t.id}
+                  selectTab={() => handleTabChange(t.id)}
                 >
                   {t.label}
-                </motion.button>
+                </TabButton>
               ))}
             </motion.div>
 

@@ -1,17 +1,20 @@
 import React from 'react'
+import { motion } from 'framer-motion'
 
 const TabButton = ({ selectTab, active, children }) => {
   const styleTab = active 
     ? "border-b-2 border-primary-500 text-white" 
-    : "text-secondary-500"
+    : "text-secondary-500 hover:text-white"
 
   return (
-    <span  
-      className={`cursor-pointer mx-4 lg:text-lg hover:text-white transition-all duration-200 ${styleTab}`}
+    <motion.button
       onClick={selectTab}
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.95 }}
+      className={`cursor-pointer px-4 py-2 transition-all duration-200 font-semibold ${styleTab}`}
     >
       {children}
-    </span>
+    </motion.button>
   )
 }
 

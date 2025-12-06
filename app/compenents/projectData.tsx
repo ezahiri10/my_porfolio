@@ -6,14 +6,14 @@ export const projectData = [
     image: "/Projects/ft_transdance.jpg",
     tag: ["All", "Game", "Web"],
     githubUrl: "https://github.com/ezahiri10/trancendece_backend",
-    previewUrl: "#dfsadfsd" 
+    previewUrl: "#"
   },
   {
     id: 5,
     title: "Inception",
     description: "Docker and microservices project to deploy multiple containers in harmony.",
     image: "/Projects/inception.jpg",
-    tag: ["All", "DevOps", "Docker"],
+    tag: ["All", "DevOps"],
     githubUrl: "https://github.com/ezahiri10/INCEPTION_42",
     previewUrl: "#"
   },
@@ -22,7 +22,7 @@ export const projectData = [
     title: "FT_IRC",
     description: "Internet Relay Chat server and client project for real-time communication.",
     image: "/Projects/ft_irc.jpg",
-    tag: ["All", "Network", "Web"],
+    tag: ["All", "Web"],
     githubUrl: "https://github.com/ezahiri10/FT_IRC_42",
     previewUrl: "#"
   },
@@ -31,7 +31,7 @@ export const projectData = [
     title: "Cub3D",
     description: "A 3D raycasting game engine project inspired by Wolfenstein 3D.",
     image: "/Projects/cub3d.jpg",
-    tag: ["All", "Game", "Graphics"],
+    tag: ["All", "Game"],
     githubUrl: "https://github.com/ezahiri10/CUB_3D",
     previewUrl: "#"
   },
@@ -40,7 +40,7 @@ export const projectData = [
     title: "Born2Root",
     description: "Linux server and security project focused on sysadmin and hardening tasks.",
     image: "/Projects/born2root.jpg",
-    tag: ["All", "DevOps", "Linux"],
+    tag: ["All", "DevOps"],
     githubUrl: "https://github.com/ezahiri10/Born2Root",
     previewUrl: "#"
   },
@@ -49,7 +49,7 @@ export const projectData = [
     title: "Minishell",
     description: "Custom Unix shell implementation handling commands and redirections.",
     image: "/Projects/minishell.jpg",
-    tag: ["All", "Shell", "C"],
+    tag: ["All", "C"],
     githubUrl: "https://github.com/ezahiri10/minishell_42",
     previewUrl: "#"
   },
@@ -58,7 +58,7 @@ export const projectData = [
     title: "Philosophers",
     description: "Simulation of the dining philosophers problem to understand concurrency.",
     image: "/Projects/philosopher.jpg",
-    tag: ["All", "Algorithm", "C"],
+    tag: ["All", "C"],
     githubUrl: "https://github.com/ezahiri10/PHILOSOPHER_42",
     previewUrl: "#"
   },
@@ -67,7 +67,7 @@ export const projectData = [
     title: "PushSwap",
     description: "Sorting algorithm project to sort numbers with minimal operations.",
     image: "/Projects/push_swap.jpg",
-    tag: ["All", "Algorithm", "C"],
+    tag: ["All", "C"],
     githubUrl: "https://github.com/ezahiri10/PUSH_SWAP_42",
     previewUrl: "#"
   },
