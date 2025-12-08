@@ -1,7 +1,13 @@
-import React from 'react'
+import React, { ReactNode } from 'react'
 import { motion } from 'framer-motion'
 
-const TabButton = ({ selectTab, active, children }) => {
+interface TabButtonProps {
+  selectTab: () => void;
+  active: boolean;
+  children: ReactNode;
+}
+
+const TabButton = ({ selectTab, active, children }: TabButtonProps) => {
   const styleTab = active 
     ? "border-b-2 border-primary-500 text-white" 
     : "text-secondary-500 hover:text-white"

@@ -2,7 +2,15 @@ import { CodeBracketIcon } from "@heroicons/react/24/solid";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
-const ProjectCard = ({ imgUrl, title, description, githubUrl, preview }) => {
+interface ProjectCardProps {
+  imgUrl: string;
+  title: string;
+  description: string;
+  githubUrl: string;
+  preview: string;
+}
+
+const ProjectCard = ({ imgUrl, title, description, githubUrl, preview }: ProjectCardProps) => {
   return (
     <motion.div
       whileHover={{ y: -10 }}

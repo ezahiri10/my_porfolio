@@ -1,7 +1,14 @@
 "use client";
 import { motion } from "framer-motion";
+import { ReactNode } from "react";
 
-const ProjectTag = ({ setTagSelected, active, children }) => {
+interface ProjectTagProps {
+  setTagSelected: () => void;
+  active: boolean;
+  children: ReactNode;
+}
+
+const ProjectTag = ({ setTagSelected, active, children }: ProjectTagProps) => {
   const tagStyle = active
     ? "bg-primary-500 text-white border-2 border-primary-500 shadow-lg shadow-primary-500/50"
     : "text-secondary-400 hover:text-secondary-300";
