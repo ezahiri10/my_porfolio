@@ -64,8 +64,8 @@ const AboutSection = () => {
             className="text-secondary-300 text-lg leading-relaxed"
             variants={itemVariants}
           >
-            I'm a full-stack developer specialized in React, Next.js, and
-            Node.js. With a strong foundation in computer science, I create
+            I'm a full-stack developer specialized in Nodejs (ExpressJS, Fastify), React, Next.js, and
+            SQL. With a strong foundation in computer science, I create
             innovative solutions that solve real-world problems.
           </motion.p>
 

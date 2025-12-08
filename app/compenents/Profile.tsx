@@ -52,12 +52,12 @@ const HeroSection = () => {
           <div className="space-y-4">
             <motion.div className="inline-block" variants={itemVariants}>
               <span className="text-primary-500 text-sm font-semibold px-4 py-2 bg-primary-500/10 rounded-full">
-                👋 Welcome to my portfolio
+                 Welcome to my portfolio
               </span>
             </motion.div>
             
             <motion.h1 className="text-5xl md:text-7xl font-black text-white leading-tight" variants={itemVariants}>
-              I'm <span className="bg-gradient-to-r from-primary-400 via-primary-500 to-primary-600 bg-clip-text text-transparent">Mostapha</span>
+              I'm <span className="text-primary-400">Mostapha</span>
             </motion.h1>
             
             <motion.div className="h-20" variants={itemVariants}>
@@ -86,13 +86,6 @@ const HeroSection = () => {
           </motion.p>
 
           <motion.div className="flex flex-wrap gap-4 pt-4" variants={itemVariants}>
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="px-8 py-4 bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 text-white font-bold rounded-xl shadow-2xl shadow-primary-500/50 transition-all duration-300"
-            >
-              View My Work
-            </motion.button>
             <motion.button
               onClick={() => {
                 window.open('https://drive.google.com/uc?export=download&id=1r0MXPS8Gkh-EzrP6jnEf0qbWvRlOzzOU', '_blank');
