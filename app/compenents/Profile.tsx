@@ -108,7 +108,11 @@ const HeroSection = () => {
           className="relative flex justify-center items-center"
           variants={imageVariants}
         >
-          <div className="relative w-80 h-80 md:w-96 md:h-96">
+          <motion.div 
+            className="relative w-80 h-80 md:w-96 md:h-96"
+            animate={{ y: [0, -20, 0] }}
+            transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
+          >
             {/* Animated glow circle */}
             <motion.div 
               className="absolute inset-0 bg-gradient-to-br from-primary-500 via-primary-600 to-secondary-700 rounded-full blur-2xl opacity-75"
@@ -153,7 +157,7 @@ const HeroSection = () => {
               }}
               transition={{ repeat: Infinity, duration: 5, delay: 0.5 }}
             ></motion.div>
-          </div>
+          </motion.div>
         </motion.div>
       </motion.div>
 
