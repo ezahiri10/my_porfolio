@@ -1,8 +1,24 @@
 import type { Metadata } from "next";
+import { Space_Grotesk, Inter } from "next/font/google";
 import Navbar from "./compenents/Navbar";
 import Footer from "./compenents/Footer";
 import VantaBackground from "./compenents/VantaBackground";
 import "./globals.css";
+
+// Heading font - Space Grotesk (modern, tech-focused, geometric)
+const spaceGrotesk = Space_Grotesk({
+  subsets: ["latin"],
+  variable: "--font-heading",
+  display: "swap",
+  weight: ["400", "500", "600", "700"],
+});
+
+// Body font - Inter (clean, highly readable, professional)
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-body",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://mostapha-zahiri.com"),
@@ -43,7 +59,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${spaceGrotesk.variable} ${inter.variable}`}>
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -65,7 +81,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="bg-black text-white">
+      <body className="bg-black text-white font-body antialiased">
         <VantaBackground>
           <Navbar />
           <main className="max-w-7xl mx-auto">{children}</main>
